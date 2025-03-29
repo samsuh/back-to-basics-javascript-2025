@@ -272,3 +272,25 @@ String comparisons compare the unicode values.
 ## Conditional Statements
 
 if, else if, else
+
+if true or false, run code inside {}
+else ifs must come after an if. within the group of if/elseifs, only one of these can be true.
+you can use as many elseifs as you want
+else is the catch-all that runs if nothing was true before it. else must have an if before it.
+
+let password;
+if (password.length > 6){
+if (password.indexOf(' ') === -1){
+console.log("Password OK")
+} else {
+console.log("Password length OK but cannot contain spaces")
+}
+} else {
+console.log("Invalid Password")
+}
+
+Truthy Falsy
+All values have an inherent truthiness and falsiness
+Everything is true except:
+
+- false, 0, "" (empty string), null, undefined, NaN
