@@ -85,3 +85,30 @@ numbers get converted to a string, then compares unicode values.
 - to do sorting, pass in a function to tell it how you want it to sort.
 
 ## Reference Types
+
+primitive types store the actual primitive value.
+arrays and objects store a reference to the thing at a specific memory location
+
+### Const and arrays
+
+const is immutable.
+the reference is still ok, so you can mutate array values inside.
+const myArray = ['brown', 'brown']
+myArray.push('purple') changes myArray to be ['brown', 'brown', 'purple']
+
+### Arrays of arrays
+
+const colors = [
+['1', '2'],
+['3', '4'],
+['5', '6']
+]
+
+colors[2] gives the 2-index array of ['5', '6'].
+colors[2][0] gives the '5' which is the 0th index of the 2 index.
+
+const tiktaktoeBoard = [
+['O', null, 'X'],
+[null, 'X', 'O'],
+['X', 'O', null],
+]
