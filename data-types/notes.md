@@ -112,3 +112,8 @@ const tiktaktoeBoard = [
 [null, 'X', 'O'],
 ['X', 'O', null],
 ]
+
+## Objects
+
+Grouped data with labels.
+Pairs of data label and value. key-value pairs.
