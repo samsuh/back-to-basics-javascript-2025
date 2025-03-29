@@ -294,3 +294,77 @@ All values have an inherent truthiness and falsiness
 Everything is true except:
 
 - false, 0, "" (empty string), null, undefined, NaN
+
+Logical Operators
+
+&& || !
+
+a && b is only true if both a and b are true
+a || b is true if either a is true or b is true
+!true = false since ! negates
+
+if (password.length >= 6 && password.indexOf(' ') === -1){
+console.log("VALID")
+} else {
+console.log("INVALID")
+}
+
+&&
+using && to check if a number is in a range.
+if (num > 1 && num <= 10){
+console.log("Number is valid, between 1 and 10")
+}
+
+||
+true || false is true
+true || true is also true
+let age = 78
+if (age < 6 || age >= 65){
+console.log("You get in for free!")
+} else {
+console.log("You must pay")
+}
+
+! NOT Operator
+
+Operator precedence
+let x = 7;
+x == 7 || x === 3 && x > 10;
+&& runs first, so it runs like:
+(x === 3 && x > 10) which is false, then OR it with x == 7 which is true. so true.
+to run it the other way, we have to put parentheses around the OR statement.
+! comes before &&
+
+## Switch Statement
+
+let day = 3;
+if (day === 1){
+}
+switch(day){
+case 1:
+console.log("Monday");
+break;
+case 2:
+console.log("Tuesday");
+break;
+case 3:
+console.log("Wednesday");
+break;
+}
+
+let emoji = 'sad face';
+switch(emoji){
+case 'sad face':
+case 'happy face':
+console.log('yellow')'
+break;
+}
+It runs the code after the true statement until it hits a break.
+You can stack multiple cases into one code block.
+
+## Ternary Operator
+
+condition ? expIfTrue : expIfFalse
+
+let num = 7;
+num === 7 ? console.log('lucky') : console.log('bad!')
