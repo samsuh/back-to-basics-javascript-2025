@@ -254,9 +254,6 @@ parseInt("$99") = NaN because it doesnt know what to do with the non-number char
 parseInt("99cents") = 99 because the numbers are at the front
 you could potentially use this to pull off just the number and do math with it.
 
-Note: running javascript from files
-text editor. make a .js file. make html file. run a script inside html file to run js. open html file in browser.
-
 # Control Flow
 
 ## Comparisons
@@ -271,3 +268,7 @@ String comparisons compare the unicode values.
 
 != nonequality
 !== strict nonequality
+
+## Conditional Statements
+
+if, else if, else
