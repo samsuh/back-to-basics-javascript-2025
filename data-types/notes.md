@@ -117,3 +117,42 @@ const tiktaktoeBoard = [
 
 Grouped data with labels.
 Pairs of data label and value. key-value pairs.
+
+### Object literal
+
+{}
+reference to a place in memory
+uses key-value pairs
+Order is NOT preserved.
+you can access the values by using .keyName
+
+keys are turned into strings.
+
+let data = {a:1,} trailing comma is optional, but must separate key-value pairs with comma.
+
+const numbers = {100: 'one hundred', 16: 'sixteen'}
+numbers.100 wont work because 100 is a number. the key 100 is turned into a string, so using a number cant access it.
+numbers[100] works because the 100 here is also converted to a string to look up the key '100'
+using the [] notation to access keys works for things that are invalid javascript identifiers like numbers or with spaces.
+
+const palette = { red: '#eb4d4b', yellow: '#f9ca24', blue: '#30336b' }
+palette.blue works
+palette[blue] does not work
+palette['blue'] works
+putting a variable in there works since it would be evaluated, whereas .variable would not.
+
+const userReviews = {}
+userReviews['queenBee49'] = 4.0;
+userReviews.mrSmith78 = 3.5;
+
+nested objects is accessed via chainging .keys
+
+objects store references to the data in them. often use const.
+
+object equality.
+let nums = [1,2,3];
+let myster = [1,2,3];
+nums does not equal nums, despite having the same values inside.
+
+Reference equality
+have to loop over the reference and check each value's equality.
