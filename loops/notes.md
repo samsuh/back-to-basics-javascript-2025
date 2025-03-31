@@ -45,5 +45,72 @@ outer loop increments once. inner loop runs its full looped cycle.
 
 while something is true, run this code.
 while(somethingIsTrue){run this code}
+note that the code running inside should try to make the condition false if you want the loop to eventually stop.
 
 while loops are great for when you don't know how many times a loop will run.
+while (!gameOver) {gameLogic}
+
+const targetNum = Math.floor(Math.random() * 10) +1
+let guess = Math.floor(Math.random()*10)+1
+while (guess !== target){
+console.log(`Target: ${target}. Guess: ${guess}`)
+guess = Math.floor(Math.random()\*10)+1
+}
+console.log(`You win! Target: ${target}. Guess: ${guess}`)
+
+## Break
+
+When javascript hits 'break', the loop ends and exits current loop immediately.
+if it's a nested loop, break only exits the inner loop.
+you could do it in a forloop but it's not as useful since you can stop at the end condition
+
+while (true){
+if(condition === true) break
+}
+
+## For Of
+
+For (variable of an iterable){run code}
+
+let subreddits = ['soccer', 'askreddit', 'books']
+for (let sub in subreddits){console.log(sub)}
+for (let thething in array)
+
+iterables: strings, array
+objects NOT ITERABLE.
+
+forOf is great when you just need the value in the iterable.
+forOf is not good when you also need access to the index of the iterable. for is better.
+
+for better: need access to index AND value
+forOf better: just need value.
+
+objects not iterable; you can forOf over just the keys or just values.
+Objects dont have indices, so movieReviews[1] means nothing.
+
+Object.keys()
+Object.values()
+
+Instead of iterating over the whole object, can iterate over a collection of just the keys or just the values.
+
+let keys = movieReviews.keys()
+for (let key in keys){run code}
+
+## For In
+
+for OF iterates over VALUESof an iterable.
+for IN iterates over KEYS of an iterable.
+
+const jeopardyWinnings = {
+regular: 2522700,
+watson: 300000,
+champions: 500000,
+decades: 100000
+}
+for (let prop in jeopardyWinnings){
+console.log(prop)
+}
+not recommended to use for-in with arrays, even though it would work and give you the key, which is the index.
+
+FOR IN = keys
+FOR OF = VALUES
