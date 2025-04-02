@@ -66,3 +66,17 @@ function getCard() {
   const cardSuit = Math.floor(Math.random() * validSuits.length)
   return { value: validValues[cardValue], suit: validSuits[cardSuit] }
 }
+
+function outer() {
+  let movie = 'Amadeus'
+  function inner() {
+    console.log(movie.toUpperCase())
+  }
+  inner() // this works because inner was still called within outer() fx.
+}
+//calling inner() here would not work, because it's outside function scope.
+
+const btn = document.querySelector('button')
+btn.addEventListener('click', () => {
+  alert('dosomethingafter3sec')
+})
