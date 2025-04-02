@@ -145,3 +145,6 @@ Takes in callback, and returns an array filled with result of calling callback o
 
 const texts = ["bottle", "cup", "mug", "thermos"]
 const capitalized = texts.map(function(t){return t.toUpperCase()}) // ran toUpperCase on every element and put it in a new array and retured new array.
+map has to return new value out. otherwise itll return something (undefined), so returning the value will populate it with info you actually want.
+capture the returned new array into a variable.
+can return in whatever format you want the output to be, like in an object.
