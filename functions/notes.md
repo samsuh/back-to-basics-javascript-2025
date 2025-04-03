@@ -201,3 +201,82 @@ pass in boolean test function.
 
 same as every but if some elements satisfy, return true.
 every must have all elements satisfy to return true.
+
+### Sort
+
+sorted in place. original array is changed and returned.
+you have to pass .sort() a "compare function" and two parameters "a,b" or "first,second" or whatever you name it.
+if the function returns <0, sorts a before b
+else if function returns 0, leaves a and b unchanged
+else if function returns >0, sorts b before a.
+
+const prices = [1,20,55,1159132,331,1531]
+const sort1 = prices.sort((a,b) => a - b)
+first element goes into a, second element goes into b. compared using passed function and sorted based on result of comparing the two elements.
+second element goes into a, third element goes into b. compare. sort.
+third element goes into a, fourth element goes into b. compare. sort.
+etc.
+if you dont want to mutate in place, you can .slice() beforehand into a new variable.
+
+sort based on comparing object values.
+books.sort((a,b) => {
+a.rating - b.rating
+})
+
+### Reduce
+
+Distill a bunch of stuff in an array down into one thing.
+
+#### Reduce to get total
+
+ex: Sum all the values, finding the maximum value in an array. many things into one value.
+[1,2,3,5].reduce((accumulator,currentValue) => {
+return accumulator + currentValue
+})
+accumulator starts at arr[0], currentValue starts at arr[1]
+accumulator stores the accumulated total value as we go through the array.
+1+2//3. 3 goes into the accumulator value.
+3+3//6 accumulator + next value
+6+5//11
+reduce returns the total accumulated value of the whole array.
+
+#### Reduce to get MAX
+
+arr.reduce((max, currentVal) => {
+if (currentVal > max) return currentVal
+return max
+})
+the return goes into the first parameter slot for the subsequent run against the next element.
+
+we can also use in Math.max(x,y)
+arr.reduce((max, currentVal) => Math.max(max,currentVal))
+
+reduce can take in a default accumulator value to start off with.
+arr.reduce((x,y)=>{}, defaultValue)
+
+#### Tallying using Reduce
+
+const votes = ['y', 'y', 'n', 'y', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y', 'y', 'n', ]
+{y: 5, n: 8}
+const results = votes.reduce(callback, {})
+const results = votes.reduce((tally, value), {
+if (tally[value]){tally[value]++} else {tally[value]=1}
+return tally
+})
+
+const results = votes.reduce((tally, val) => {
+tally[val] = (tally[val] || 0) +1
+return tally
+})
+first time through "tally[val] || 0" equals "undefined || 0" which equals 0.
+
+books array to group by ratings floored.
+
+books.reduce((sortedBooks, val) => {
+const key = Math.floor(val.rating) //get current book's rating floored.
+if (!sortedBooks[key]){ //if that category of stars doesnt exist, create it as []
+sortedBooks[key] = []
+}
+sortedBooks[key].push(val) //put the whole currentbook in the appropriate key group.
+return sortedBooks
+}, {})
