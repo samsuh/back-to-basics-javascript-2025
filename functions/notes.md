@@ -122,6 +122,26 @@ hoot()
 var hoot = function (){console.log('hoothoot')} // hoot exists, but cant call it to use the function itself. it's known to exist, but not its value.
 this is a "function expression". works the same way as var/let for setting variables.
 
+## Arrow Functions
+
+anonymous function that is more compact
+() => {}
+function(x) {return x*x}
+(x) => {return x*x}
+
+the () is optional when there is only one parameter
+x => {return x\*x}
+empty parentheses is required when theres no parameter
+
+implicit returns
+works for when there's a simple expression being returned; not doing other logic first (not making variable, making conditionals)
+
+const square = n => (
+n\*n
+)
+the () here is to make it read a multiline expression
+can use implicit return when it's very obvious to js what to return and it cant get lost in logic along the way.
+
 ## Built-in Array Methods
 
 All arrays have built in functions as part of what makes it an array.
@@ -148,3 +168,36 @@ const capitalized = texts.map(function(t){return t.toUpperCase()}) // ran toUppe
 map has to return new value out. otherwise itll return something (undefined), so returning the value will populate it with info you actually want.
 capture the returned new array into a variable.
 can return in whatever format you want the output to be, like in an object.
+
+### Find
+
+.find()
+returns ONE ELEMENT
+returns the value of the FIRST element that satisfies the testing function
+"test function" returns true of false and is used to test every element.
+
+const goodBook = books.find(b => b.rating >= 4.3)
+
+### Filter
+
+returns a new array containing only elements that satisfy the test function
+Test all elements. Test OK, KEEP element.
+"test function" returns boolean. run against every element in array. keep TRUE.
+
+const query = 'the'
+const results = books.filter(b => {
+const title = book.title.toLowerCase()
+return title.includes(query.toLowerCase())
+})
+
+### Every
+
+checks each element in an array for a test function. if ALL elements satisfy the test, return one 'true'
+words.every(word => word.length === 3) //true
+
+pass in boolean test function.
+
+### Some
+
+same as every but if some elements satisfy, return true.
+every must have all elements satisfy to return true.
